@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+
+            android:title="My Profile" />
+        <item
+            android:id="@+id/nav_messages"
+
+            android:title="Messages" />
+        <item
+            android:id="@+id/nav_favorites"
+
+            android:title="Favorites" />
+        <item
+            android:id="@+id/nav_payments"
+
+            android:title="Payments" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu >
+
+            <item
+
+                android:id="@+id/nav_support"
+
+                android:title="Support" />
+            <item
+                android:id="@+id/nav_about"
+
+                android:title="About" />
+
+            <ImageView
+                android:alpha="0"
+                android:background="@android:color/transparent"
+                android:layout_gravity="bottom"
+                android:src="@drawable/ic_school_100dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </menu>
+    </item>
+
+</menu>
