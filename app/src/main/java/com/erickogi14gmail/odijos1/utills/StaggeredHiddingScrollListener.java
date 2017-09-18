@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
 /**
- * Created by kimani kogi on 5/17/2017.
+ * Created by Eric on 9/15/2017.
  */
 
 public abstract class StaggeredHiddingScrollListener extends RecyclerView.OnScrollListener {

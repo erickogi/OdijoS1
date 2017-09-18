@@ -1,8 +1,5 @@
 package com.erickogi14gmail.odijos1.OdijoLFound;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,16 +10,11 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.View;
 
-import com.erickogi14gmail.odijos1.Main.FragmetMain;
 import com.erickogi14gmail.odijos1.R;
 
 public class OdijoActivity extends AppCompatActivity {
     public static Fragment fragment = null;
-   // public static Drawable changeBackArrowColor(Context context,int color){
-   //     String resName;
-   //     int res;
-   //     resName= Build.VERSION.SDK_INT>=23? "abc_ic_back_material" : "abc_ic_"
-   // }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +24,6 @@ public class OdijoActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //getActivity().setTitle(Html.fromHtml("<font color ='#142170'>Favorites</font>"));
 
         this.setTitle(Html.fromHtml("<font color ='#142170'>Available    Odijos </font>"));
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

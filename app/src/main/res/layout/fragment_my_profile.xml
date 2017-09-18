@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <android.support.v7.widget.CardView
         android:id="@+id/card_title"
         android:layout_width="match_parent"
@@ -13,145 +15,125 @@
             android:layout_height="match_parent">
             <LinearLayout
 
-                android:layout_alignParentTop="true"
-                android:onClick="goBack"
                 android:id="@+id/layout_back"
-
                 android:layout_width="50dp"
-                android:layout_height="70dp">
-                <ImageView
-                    android:layout_gravity="center_vertical"
-                    android:id="@+id/icon_back"
+                android:layout_height="70dp"
 
-                    android:src="@drawable/ic_arrow_back_black_24dp"
+                android:layout_alignParentTop="true"
+                android:onClick="goBack">
+                <ImageView
+                    android:id="@+id/icon_back"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_arrow_back_black_24dp" />
 
             </LinearLayout
                 >
 
             <TextView
-                android:typeface="monospace"
                 android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
                 android:layout_below="@+id/layout_back"
-
-                android:textAlignment="center"
-                android:layout_marginLeft="4dp"
-                android:textStyle="bold"
-                android:textSize="25sp"
-                android:textColor="@color/colorPrimaryP"
-
-                android:text="My Profile"
-                android:padding="4dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:layout_marginStart="4dp"
+                android:padding="4dp"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <!--<LinearLayout-->
-                <!---->
-                <!---->
-                <!--android:layout_centerHorizontal="true"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="70dp">-->
-                <!--<TextView-->
+                android:text="@string/my_profile_title"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryP"
+                android:textSize="25sp"
 
-                    <!--android:layout_centerInParent="true"-->
-                    <!--android:gravity="center_vertical"-->
-                    <!--android:layout_alignParentTop="true"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:layout_marginLeft="4dp"-->
-                    <!--android:textStyle="bold"-->
-                    <!--android:textSize="25sp"-->
-                    <!--android:textColor="@color/colorPrimaryP"-->
+                android:textStyle="bold"
+                android:typeface="monospace" />
 
-                    <!--android:text="My Profie"-->
-                    <!--android:padding="4dp"-->
-                    <!--android:layout_centerHorizontal="true"-->
-                    <!--android:layout_centerVertical="true"-->
-
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content" />-->
-            <!--</LinearLayout>-->
             <ScrollView
-                android:layout_below="@+id/textTitle"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+
+
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textTitle">
 
 
             <LinearLayout
-                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:layout_marginEnd="12dp"
-                android:layout_marginStart="12dp"
 
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
                 <RelativeLayout
 
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:padding="4dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
+
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/account"
                         android:layout_width="140dp"
                         android:layout_height="140dp"
 
-                        android:src="@drawable/ic_account_circle_black_24dp" />
-                  <LinearLayout
-                      android:orientation="vertical"
-                      android:layout_toEndOf="@+id/account"
-                      android:layout_gravity="bottom"
-                      android:layout_centerVertical="true"
+                        android:fitsSystemWindows="true"
+                        android:padding="4dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/p"
+                        app:civ_border_color="@color/colorAccentP"
+                        app:civ_border_width="0dp" />
+
+
+                    <LinearLayout
                       android:layout_width="wrap_content"
-                      android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="bottom"
+                        android:layout_toEndOf="@+id/account"
+                        android:orientation="vertical">
                       <TextView
                           android:id="@+id/profile_rating_title"
-                          android:typeface="monospace"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/txt_your_rating_profile"
+
+
+                          android:textColor="@color/colorPrimaryP"
                           android:textSize="22sp"
                           android:textStyle="bold"
-
-
-                          android:text="Your Rating"
-                          android:textColor="@color/colorPrimaryP"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content" />
+                          android:typeface="monospace" />
                       <LinearLayout
-                          android:orientation="horizontal"
                           android:layout_width="wrap_content"
-                          android:layout_height="wrap_content">
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal">
                           <TextView
 
                               android:id="@+id/profile_rating"
+                              android:layout_width="wrap_content"
+
+                              android:layout_height="wrap_content"
+
                               android:gravity="bottom"
-
-                              android:textSize="22sp"
-
-                              android:textStyle="bold"
 
 
                               android:text="4.5 "
                               android:textColor="@color/colorPrimaryP"
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content" />
+                              android:textSize="22sp"
+                              android:textStyle="bold" />
                           <TextView
 
 
+                              android:layout_width="wrap_content"
 
 
-
-                              android:textStyle="bold"
-
-
+                              android:layout_height="wrap_content"
                               android:text="/s "
                               android:textColor="@color/colorPrimaryP"
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content" />
+                              android:textStyle="bold" />
                       </LinearLayout>
 
                   </LinearLayout>
@@ -166,82 +148,88 @@
 
                       <LinearLayout
                           android:id="@+id/profile_names"
-                          android:orientation="vertical"
                           android:layout_width="match_parent"
-                          android:layout_height="wrap_content">
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
                           <TextView
-                              android:typeface="monospace"
-                              android:textAlignment="center"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
                               android:layout_marginLeft="4dp"
-                              android:textStyle="bold"
-                              android:textSize="25sp"
-                              android:textColor="@color/colorPrimaryP"
-
+                              android:padding="4dp"
                               android:text="First User Name"
-                              android:padding="4dp"
-                              android:layout_width="match_parent"
-                              android:layout_height="wrap_content" />
-                          <TextView
-                              android:typeface="monospace"
                               android:textAlignment="center"
-                              android:layout_marginLeft="4dp"
-                              android:textStyle="bold"
-                              android:textSize="20sp"
-                              android:textColor="@color/colorPrimaryP"
 
-                              android:text="Second User Name"
-                              android:padding="4dp"
+                              android:textColor="@color/colorPrimaryP"
+                              android:textSize="25sp"
+                              android:textStyle="bold"
+                              android:typeface="monospace" />
+
+                          <TextView
                               android:layout_width="match_parent"
-                              android:layout_height="wrap_content" />
+                              android:layout_height="wrap_content"
+                              android:layout_marginLeft="4dp"
+                              android:padding="4dp"
+                              android:text="Second User Name"
+                              android:textAlignment="center"
+
+                              android:textColor="@color/colorPrimaryP"
+                              android:textSize="20sp"
+                              android:textStyle="bold"
+                              android:typeface="monospace" />
 
                       </LinearLayout>
                     <LinearLayout
                         android:id="@+id/profile_contacts"
-                        android:layout_marginTop="12dp"
-                        android:layout_below="@+id/profile_names"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/profile_names"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+                        <!--android:drawableStart="@drawable/ic_phone_iphone_black_24dp"-->
                         <Button
+                            android:id="@+id/btn_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_border_transaparent"
 
-                            android:textAlignment="viewStart"
                             android:backgroundTint="@android:color/transparent"
                             android:text="0714406984"
-                            android:drawableStart="@drawable/ic_phone_iphone_black_24dp"
-                            android:background="@drawable/rounded_border_transaparent"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:textAlignment="viewStart" />
+                        <!--android:drawableStart="@drawable/ic_email_black_24dp"-->
                         <Button
-                            android:textAlignment="viewStart"
-                            android:backgroundTint="@android:color/transparent"
-                            android:textAllCaps="false"
-                            android:text="erickogi14@gmail.com"
-                            android:drawableStart="@drawable/ic_email_black_24dp"
-                            android:background="@drawable/rounded_border_transaparent"
+                            android:id="@+id/btn_mail"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_border_transaparent"
+                            android:backgroundTint="@android:color/transparent"
+
+                            android:text=" erickogi14@gmail.com"
+                            android:textAlignment="viewStart"
+                            android:textAllCaps="false" />
                     </LinearLayout>
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_marginTop="12dp"
-                        android:layout_below="@+id/profile_contacts"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/profile_contacts"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
 
                         <Button
-                            android:textColor="@android:color/white"
-                            android:text="Favorites"
-                            android:background="@drawable/rounded_border_accent"
+                            android:id="@+id/btn_profile_favorites"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_border_accent"
+                            android:text="@string/btn_profile_favorites"
+                            android:textColor="@android:color/white" />
 
                         <Button
+                            android:id="@+id/btn_profile_edit_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:textColor="@android:color/white"
-                            android:text="Edit Profile"
                             android:background="@drawable/rounded_border_accent"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:text="@string/btn_edit_profile"
+                            android:textColor="@android:color/white" />
                     </LinearLayout>
 
 

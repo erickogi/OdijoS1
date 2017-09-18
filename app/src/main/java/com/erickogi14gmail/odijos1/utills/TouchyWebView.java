@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.webkit.WebView;
 
 /**
- * Created by kimani kogi on 5/14/2017.
+ * Created by Eric on 9/15/2017.
  */
 
 public class TouchyWebView extends WebView {

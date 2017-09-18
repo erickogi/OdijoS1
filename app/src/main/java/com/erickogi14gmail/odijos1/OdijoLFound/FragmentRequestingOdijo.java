@@ -1,7 +1,6 @@
 package com.erickogi14gmail.odijos1.OdijoLFound;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -22,11 +21,10 @@ import com.wang.avi.AVLoadingIndicatorView;
  */
 
 public class FragmentRequestingOdijo extends Fragment {
-    private View view;
     public static Fragment fragment = null;
     AVLoadingIndicatorView avLoadingIndicatorView;
     Button btnCancel,btnCall;
-
+    private View view;
 
     @Nullable
     @Override
@@ -94,6 +92,7 @@ public class FragmentRequestingOdijo extends Fragment {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                getActivity().finish();
             }
         });
         btnProceed.setOnClickListener(new View.OnClickListener() {

@@ -21,9 +21,9 @@ import java.util.ArrayList;
  */
 
 public class OdijoListAdapter extends RecyclerView.Adapter<OdijoListAdapter.MyViewHolder> {
+    private final clickListener listener;
     private Context context;
     private ArrayList<FavoritesPojo> modelList;
-    private final clickListener listener;
 
     public OdijoListAdapter(Context context, ArrayList<FavoritesPojo> modelList, clickListener listener) {
         this.context = context;
@@ -56,16 +56,7 @@ public class OdijoListAdapter extends RecyclerView.Adapter<OdijoListAdapter.MyVi
         }else {
             holder.mimgOdijoFav.setImageResource(R.drawable.heartblack);
         }
-//        try{
-//            if(favoritesPojo.getIsFavorite()/2==1){
-//
-//            }
-//            else {
-//                holder.mimgOdijoFav.setImageResource(R.drawable.heartblack);
-//            }
-//        }catch (Exception m){
-//            holder.mimgOdijoFav.setImageResource(R.drawable.heartblack);
-//        }
+
     }
 
     @Override
@@ -89,7 +80,7 @@ public class OdijoListAdapter extends RecyclerView.Adapter<OdijoListAdapter.MyVi
             mtxtOdijoRating=(TextView)itemView.findViewById(R.id.txt_odijo_ratings);
             mtxtOdijoTime=(TextView)itemView.findViewById(R.id.txt_odijo_time);
             mtxtOdijoRate=(TextView)itemView.findViewById(R.id.txt_odijo_rate);
-            mimgOdijoLogo=(ImageView)itemView.findViewById(R.id.img_odijo);
+            mimgOdijoLogo = (ImageView) itemView.findViewById(R.id.img_odijo_image);
             mimgOdijoFav=(ImageView)itemView.findViewById(R.id.img_fav_icon);
             mtxtOdijoAvailabilty=(TextView)itemView.findViewById(R.id.txt_odijo_available);
             mtxtOdijoQualifications=(TextView)itemView.findViewById(R.id.txt_odijo_qualifications);

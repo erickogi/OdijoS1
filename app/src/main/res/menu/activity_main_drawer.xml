@@ -18,6 +18,10 @@
             android:id="@+id/nav_payments"
 
             android:title="Payments" />
+        <item
+            android:id="@+id/nav_logout"
+
+            android:title="Log Out" />
     </group>
 
     <item android:title="Communicate">
@@ -34,12 +38,12 @@
                 android:title="About" />
 
             <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
                 android:alpha="0"
                 android:background="@android:color/transparent"
-                android:layout_gravity="bottom"
-                android:src="@drawable/ic_school_100dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:src="@drawable/ic_school_100dp" />
         </menu>
     </item>
 

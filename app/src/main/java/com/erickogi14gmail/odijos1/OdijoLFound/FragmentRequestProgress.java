@@ -1,7 +1,9 @@
 package com.erickogi14gmail.odijos1.OdijoLFound;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -22,9 +24,9 @@ import at.grabner.circleprogress.TextMode;
  */
 
 public class FragmentRequestProgress extends Fragment {
-    private View view;
     CircleProgressView circleProgressView;
     Button btnCancel,btnCall;
+    private View view;
 
     @Nullable
     @Override
@@ -46,6 +48,14 @@ public class FragmentRequestProgress extends Fragment {
 
         btnCancel=(Button)view.findViewById(R.id.btn_cancel);
         btnCall=(Button)view.findViewById(R.id.btn_call);
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:0714406984"));
+                startActivity(callIntent);
+            }
+        });
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,12 +76,14 @@ public class FragmentRequestProgress extends Fragment {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                getActivity().finish();
             }
         });
         btnProceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+
             }
         });
         dialog.show();

@@ -1,12 +1,14 @@
 package com.erickogi14gmail.odijos1;
 
-import android.graphics.Color;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,9 +18,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.erickogi14gmail.odijos1.OdijoLFound.FragmentSearching;
 import com.erickogi14gmail.odijos1.Main.FragmetMain;
+import com.erickogi14gmail.odijos1.OdijoLFound.FragmentSearching;
 import com.erickogi14gmail.odijos1.Profile.FragmentMyProfile;
+import com.erickogi14gmail.odijos1.Receipt.FragmentReceiptList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,14 +44,7 @@ public class MainActivity extends AppCompatActivity
             mAppBarLayout.setElevation(0);
         }
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -106,8 +102,26 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         if(id==R.id.nav_profile){
             fragment=new FragmentMyProfile();
+            // popOutFragments();
+            setUpView();
+        } else if (id == R.id.nav_payments) {
+            fragment = new FragmentReceiptList();
             popOutFragments();
             setUpView();
+        } else if (id == R.id.nav_logout) {
+            SharedPreferences sharedPreferences = getSharedPreferences("loginStatus", Context.MODE_PRIVATE);
+
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+
+            editor.putBoolean("loginStaus", false);
+
+
+            editor.commit();
+            startActivity(new Intent(MainActivity.this, SplashScreen.class));
+            finish();
+
         }
 
 

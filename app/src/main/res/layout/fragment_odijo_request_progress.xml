@@ -1,139 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/colorPrimaryDarkP"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDarkP"
+    android:orientation="vertical">
 <at.grabner.circleprogress.CircleProgressView
-    android:layout_marginTop="20dp"
-    android:layout_marginBottom="10dp"
-    android:layout_gravity="center_horizontal"
-    app:cpv_text="Loading"
-    app:cpv_textColor="@android:color/white"
     android:id="@+id/circleProgress"
-
-    app:cpv_seekMode="false"
-
-
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="20dp"
 
     app:cpv_blockScale="0.9"
-    android:layout_width="200dp"
-    android:layout_height="200dp" />
+
+
+    app:cpv_seekMode="false"
+    app:cpv_text="Loading"
+    app:cpv_textColor="@android:color/white" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <RelativeLayout
 
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:padding="4dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-                android:id="@+id/account"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_odijo_image"
                 android:layout_width="140dp"
+
                 android:layout_height="140dp"
 
-                android:src="@drawable/ic_account_circle_black_24dp" />
+                android:fitsSystemWindows="true"
+                android:padding="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/p"
+                app:civ_border_color="@color/colorAccentP"
+                app:civ_border_width="0dp" />
+
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_toEndOf="@+id/account"
-                android:layout_gravity="bottom"
-                android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom"
+                android:layout_toEndOf="@+id/img_odijo_image"
+                android:orientation="vertical">
                 <TextView
                     android:id="@+id/txt_odijo_name"
-                    android:typeface="monospace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_odijo_name"
+
+
+                    android:textColor="@android:color/white"
                     android:textSize="22sp"
                     android:textStyle="bold"
-
-
-                    android:text="Full Odijo Name"
-                    android:textColor="@android:color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:typeface="monospace" />
                 <TextView
                     android:id="@+id/txt_course"
-                    android:typeface="monospace"
-                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
 
 
                     android:text="Course Name"
                     android:textColor="@android:color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textSize="18sp"
+                    android:typeface="monospace" />
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                     <TextView
 
                         android:id="@+id/profile_rating"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+
+
                         android:gravity="bottom"
-
-                        android:textSize="18sp"
-
-
-
-
                         android:text="4.5 "
                         android:textColor="@android:color/holo_orange_dark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textSize="18sp" />
                     <TextView
 
 
+                        android:layout_width="wrap_content"
 
-
-
-                        android:textSize="15sp"
-
+                        android:layout_height="wrap_content"
                         android:text="/s "
                         android:textColor="@android:color/holo_orange_dark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textSize="15sp" />
 
                     <TextView
-                        android:layout_marginStart="8dp"
                         android:id="@+id/odijo_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="8dp"
+
+
                         android:gravity="bottom"
-
-                        android:textSize="18sp"
-
-
-
-
                         android:text="200 "
                         android:textColor="@android:color/holo_orange_dark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textSize="18sp" />
 
                     <TextView
 
 
+                        android:layout_width="wrap_content"
 
-
-
-                        android:textSize="15sp"
-
+                        android:layout_height="wrap_content"
                         android:text="Per/hr"
                         android:textColor="@android:color/holo_orange_dark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
                           <Button
                               android:id="@+id/btn_call"
-                              android:layout_marginTop="8dp"
-                              android:backgroundTint="@color/colorPrimaryP"
-                              android:background="@drawable/rounded_border_accent"
-                              android:text="Call"
-                              android:textColor="@android:color/white"
                               android:layout_width="match_parent"
-                              android:layout_height="match_parent" />
+
+                              android:layout_height="match_parent"
+                              android:layout_marginTop="8dp"
+                              android:background="@drawable/rounded_button_blue"
+                              android:text="Call"
+                              android:textColor="@android:color/white" />
             </LinearLayout>
 
 
@@ -142,16 +137,16 @@
 
         <Button
             android:id="@+id/btn_cancel"
-            android:onClick="goBack"
-            android:backgroundTint="@color/red"
-            android:background="@drawable/rounded_border_transaparent"
-            android:layout_marginBottom="34dp"
-            android:layout_centerHorizontal="true"
-            android:text="Cancle Request"
-            android:layout_alignParentBottom="true"
-
             android:layout_width="200dp"
-            android:layout_height="wrap_content" />
+
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="34dp"
+            android:background="@drawable/rounded_border_red"
+
+            android:onClick="goBack"
+            android:text="@string/btn_cancel_request_text" />
     </RelativeLayout>
 
 </LinearLayout>

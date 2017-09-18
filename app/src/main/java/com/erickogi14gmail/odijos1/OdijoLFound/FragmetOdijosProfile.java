@@ -18,20 +18,19 @@ import com.erickogi14gmail.odijos1.R;
  */
 
 public class FragmetOdijosProfile extends Fragment {
-    private View view;
     RadioGroup  mRadioGroup;
+    private View view;
 
-
-
-    public static Fragment getInstance(int position) {
-        CardFragment f = new CardFragment();
-        Bundle args = new Bundle();
-        args.putInt("position", position);
-        f.setArguments(args);
-
-        return f;
+    /**
+     * Change value in dp to pixels
+     *
+     * @param dp
+     * @param context
+     * @return
+     */
+    public static float dpToPixels(int dp, Context context) {
+        return dp * (context.getResources().getDisplayMetrics().density);
     }
-
 
     @Nullable
     @Override
@@ -51,22 +50,12 @@ public class FragmetOdijosProfile extends Fragment {
         viewPager.setOffscreenPageLimit(4);
 
         mRadioGroup=(RadioGroup)view.findViewById(R.id.radio_group);
-       // mRadioGroup.check(getArguments().getInt("position"));
 
 
         return view;
     }
+
     public void check(int p){
         mRadioGroup.check(p);
-    }
-
-    /**
-     * Change value in dp to pixels
-     * @param dp
-     * @param context
-     * @return
-     */
-    public static float dpToPixels(int dp, Context context) {
-        return dp * (context.getResources().getDisplayMetrics().density);
     }
 }
